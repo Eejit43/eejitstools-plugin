@@ -6,12 +6,17 @@ public final class EejitsTools extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        getLogger().info("EejitsTools has been enabled!");
 
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        getLogger().info("EejitsTools has been disabled!");
+    }
+
+    @Override
+    public void onLoad() {
+        getLogger().info("EejitsTools has been loaded!");
     }
 }
