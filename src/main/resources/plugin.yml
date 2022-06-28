@@ -1,0 +1,6 @@
+name: EejitsTools
+version: '${project.version}'
+main: com.eejitstools.eejitstools.EejitsTools
+api-version: 1.19
+authors: [ Eejit ]
+description: A simple plugin for personal use
