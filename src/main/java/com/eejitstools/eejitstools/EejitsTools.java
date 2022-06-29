@@ -1,22 +1,26 @@
 package com.eejitstools.eejitstools;
 
+import org.bukkit.ChatColor;
+import org.bukkit.Server;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class EejitsTools extends JavaPlugin {
+    Server server = getServer();
+    ConsoleCommandSender console = server.getConsoleSender();
 
     @Override
     public void onEnable() {
-        getLogger().info("EejitsTools has been enabled!");
-
+        console.sendMessage(ChatColor.DARK_AQUA + "EejitsTools has been enabled!");
     }
 
     @Override
     public void onDisable() {
-        getLogger().info("EejitsTools has been disabled!");
+        console.sendMessage(ChatColor.DARK_AQUA + "EejitsTools has been disabled!");
     }
 
     @Override
     public void onLoad() {
-        getLogger().info("EejitsTools has been loaded!");
+        console.sendMessage(ChatColor.DARK_AQUA + "EejitsTools has been loaded!");
     }
 }
