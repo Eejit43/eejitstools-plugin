@@ -4,3 +4,10 @@ main: com.eejitstools.eejitstools.EejitsTools
 api-version: 1.19
 authors: [ Eejit ]
 description: A simple plugin for personal use
+commands:
+  test:
+    description: A simple test command
+    usage: /<command>
+  setid:
+    description: Set an item's ID
+    usage: /<command> <id>
