@@ -1,7 +1,6 @@
 package com.eejitstools.eejitstools;
 
 import com.eejitstools.eejitstools.commands.SetIDCommand;
-import com.eejitstools.eejitstools.commands.TestCommand;
 import com.eejitstools.eejitstools.listeners.PlayerInteractListener;
 import com.eejitstools.eejitstools.listeners.PlayerJoinListener;
 import com.eejitstools.eejitstools.listeners.PlayerMoveListener;
@@ -15,6 +14,7 @@ import java.util.Objects;
 
 /**
  * The main class of the plugin
+ *
  * @author Eejit
  */
 public final class EejitsTools extends JavaPlugin implements Listener {
@@ -33,7 +33,6 @@ public final class EejitsTools extends JavaPlugin implements Listener {
         server.getPluginManager().registerEvents(new PlayerJoinListener(), this);
         server.getPluginManager().registerEvents(new PlayerInteractListener(), this);
         server.getPluginManager().registerEvents(new PlayerMoveListener(), this);
-        Objects.requireNonNull(getCommand("test")).setExecutor(new TestCommand());
         Objects.requireNonNull(getCommand("setid")).setExecutor(new SetIDCommand());
 
         plugin = this;
