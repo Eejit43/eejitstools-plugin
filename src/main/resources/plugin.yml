@@ -6,5 +6,5 @@ authors: [ Eejit ]
 description: A simple plugin for personal use
 commands:
   setid:
-    description: Set an item's ID
+    description: Set an item's "id" tag to the given value
     usage: /<command> <id>
