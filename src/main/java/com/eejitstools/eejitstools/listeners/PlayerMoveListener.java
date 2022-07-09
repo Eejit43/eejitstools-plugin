@@ -1,12 +1,13 @@
 package com.eejitstools.eejitstools.listeners;
 
 import org.bukkit.Particle;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 
-import java.util.UUID;
+import static com.eejitstools.eejitstools.EejitsTools.getPlugin;
 
 public class PlayerMoveListener implements Listener {
 
@@ -15,8 +16,12 @@ public class PlayerMoveListener implements Listener {
         if (!event.hasChangedPosition()) return;
 
         Player player = event.getPlayer();
+        String uuid = player.getUniqueId().toString();
 
-        if (player.getUniqueId().equals(UUID.fromString("02f54317-bd17-4871-95e7-d5f9d854865e"))) // Im_an_eejit
-            player.spawnParticle(Particle.ASH, player.getLocation(), 10, 0.1, 0.1, 0.1);
+        FileConfiguration config = getPlugin().getConfig();
+
+        if (config.getStringList("particles").contains(uuid)) {
+            player.getWorld().spawnParticle(Particle.valueOf(config.getString("particles." + uuid + ".type")), player.getLocation(), 10, 0.1, 0.1, 0.1);
+        }
     }
 }

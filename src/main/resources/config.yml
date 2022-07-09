@@ -1,0 +1,11 @@
+# The url of the Discord webhook to send chat events to (set to 'none' to disable)
+discord-webhook-url: none
+
+# The name of the server, used in the Discord webhook title, etc.
+server-name: Minecraft Server
+
+# Specify player-specific particles (by UUID)
+particles:
+  02f54317-bd17-4871-95e7-d5f9d854865e:
+    type: ASH
+    count: 10

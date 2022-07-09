@@ -1,14 +1,18 @@
 package com.eejitstools.eejitstools.commands;
 
-import io.github.bananapuncher714.nbteditor.NBTEditor;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.NotNull;
+
+import static com.eejitstools.eejitstools.EejitsTools.getPlugin;
 
 public class SetIDCommand implements CommandExecutor {
     @Override
@@ -20,9 +24,13 @@ public class SetIDCommand implements CommandExecutor {
                     player.sendMessage(ChatColor.RED + "You must be holding an item!");
                 } else {
                     if (args.length == 1) {
-                        ItemStack modifiedItem = NBTEditor.set(activeItem, args[0], "id");
-                        player.getInventory().setItemInMainHand(modifiedItem);
-                        player.sendMessage(ChatColor.DARK_AQUA + "The item's ID has been set to " + ChatColor.GRAY + args[0] + ChatColor.DARK_AQUA + "!");
+                        String id = args[0].toUpperCase();
+                        NamespacedKey key = new NamespacedKey(getPlugin(), "id");
+                        ItemMeta itemMeta = activeItem.getItemMeta();
+                        itemMeta.getPersistentDataContainer().set(key, PersistentDataType.STRING, id);
+                        activeItem.setItemMeta(itemMeta);
+                        player.getInventory().setItemInMainHand(activeItem);
+                        player.sendMessage(ChatColor.DARK_AQUA + "The item's ID has been set to " + ChatColor.GRAY + id + ChatColor.DARK_AQUA + "!");
                     } else if (args.length > 1) {
                         player.sendMessage(ChatColor.RED + "The ID must be a single word!");
                     } else {

@@ -8,3 +8,6 @@ commands:
   setid:
     description: Set an item's "id" tag to the given value
     usage: /<command> <id>
+  reloadconfig:
+    description: Reload the config file
+    usage: /<command>
