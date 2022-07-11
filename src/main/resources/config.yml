@@ -6,6 +6,9 @@ server-name: Minecraft Server
 
 # Specify player-specific particles (by UUID)
 particles:
+  # Player UUID, with or without dashes
   02f54317-bd17-4871-95e7-d5f9d854865e:
+    # Bukkit particle type, see https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Particle.html for types
     type: ASH
+    # The amount of particles to spawn (default: 10)
     count: 10

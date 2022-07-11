@@ -7,6 +7,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 
+import java.util.Objects;
+
 import static com.eejitstools.eejitstools.EejitsTools.getPlugin;
 
 public class PlayerMoveListener implements Listener {
@@ -20,8 +22,13 @@ public class PlayerMoveListener implements Listener {
 
         FileConfiguration config = getPlugin().getConfig();
 
-        if (config.getStringList("particles").contains(uuid)) {
-            player.getWorld().spawnParticle(Particle.valueOf(config.getString("particles." + uuid + ".type")), player.getLocation(), 10, 0.1, 0.1, 0.1);
+        if (!config.contains("particles." + uuid) && config.contains("particles." + uuid.replace("-", "")))
+            uuid = uuid.replace("-", "");
+
+        if (config.contains("particles." + uuid) || config.contains("particles." + uuid.replace("-", ""))) {
+            String type = config.getString("particles." + uuid + ".type");
+            int count = Integer.parseInt(Objects.requireNonNull(config.getString("particles." + uuid + ".count")));
+            player.getWorld().spawnParticle(Particle.valueOf(type), player.getLocation(), 1, 0.1, 0.1, 0.1);
         }
     }
 }
