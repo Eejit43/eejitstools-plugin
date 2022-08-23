@@ -9,5 +9,6 @@ A simple <img src="https://raw.githubusercontent.com/Eejit43/files/main/minecraf
 
 ### Other
 * Adds custom item abilities for various items (based on the "id" tag)
-* Adds player movement particles (todo: make this customizable through a config file)
-* Adds custom messages for various events (only for player join right now)
+* Adds player movement particles (customizable through a config file)
+* Adds custom messages for various events
+* Sends events to a Discord webhook
