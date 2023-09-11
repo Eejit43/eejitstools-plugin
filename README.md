@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/Eejit43/eejitstools-v2/main/public/favicons/icon.png" alt="EejitTools Logo (Wrench)" width="30"/> EejitTools Plugin
+# <img src="https://raw.githubusercontent.com/Eejit43/eejitstools-v2/main/src/public/favicons/icon.png" alt="EejitTools Logo (Wrench)" width="30"/> EejitTools Plugin
 
 A simple <img src="https://raw.githubusercontent.com/Eejit43/files/main/minecraft.png" alt="Minecraft Logo" width="12" /> [Minecraft](https://www.minecraft.net) plugin designed for use with <img src="https://papermc.io/favicon.ico" alt="Paper Logo" width="12" /> [Paper](https://papermc.io), a high-performance <img src="https://www.spigotmc.org/favicon.ico" alt="Spigot Logo" width="12" /> [Spigot](https://www.spigotmc.org) fork. Designed for Minecraft `1.19`.
 
